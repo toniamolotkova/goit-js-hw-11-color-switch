@@ -35,11 +35,15 @@ const changeColor = {
         refs.bodyColor.style.backgroundColor = colors[randomColorIndex];
             
         }, 1000);
+        refs.startBtn.setAttribute('disabled', true);
+    refs.stopBtn.removeAttribute('disabled');
     },
 
     stop() {
     clearInterval(this.intervalId);
-    this.isActive = false;
+        this.isActive = false;
+        refs.stopBtn.setAttribute('disabled', true);
+    refs.startBtn.removeAttribute('disabled');
     }    
 }
 
